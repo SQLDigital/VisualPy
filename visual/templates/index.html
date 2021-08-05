@@ -195,6 +195,7 @@
                </div>
             </div>
           </div>
+      </div>
    </section>
    <!--End Features Section -->
 
@@ -343,7 +344,7 @@
 
    <section id="contact">
       <div class="container">
-         <form method="post" action="{% url 'sendmail' %}" name="message" id="message" enctype="multipart/form-data">
+         <form method="post" action="{% url 'sendmail' %}" name="message" enctype="multipart/form-data">
             {% csrf_token %}
          <div class="row">
             <div class="col-md-12 text-center">
@@ -462,6 +463,6 @@
       </div>
    </section>
 
-
+</div>
 
 {% endblock %}

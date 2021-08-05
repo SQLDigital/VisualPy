@@ -1,4 +1,3 @@
-{% load static %}
 /*
 	Visual by TEMPLATE STOCK
 	templatestock.co @templatestock
@@ -76,7 +75,7 @@
 		  minFullScreenHeight: "400",
 		  hideThumbsOnMobile: "off",
 		  hideNavDelayOnMobile: 1500,
-        hideBulletsOnMobile: "off",
+          hideBulletsOnMobile: "off",
 		  hideArrowsOnMobile: "off"
     });
     
@@ -290,8 +289,8 @@
 		$("#message").slideUp(250,function() {
             $('#message').hide();
             $('#submit')
-                .after('<img src="{% static '/img/assets/contact-form-loader.gif' %}" class="loader" />')
-                .attr('enabled','enabled');
+                .after('<img src="../img/assets/contact-form-loader.gif" class="loader" />')
+                .attr('disabled','disabled');
             $.post(action, {
                 name: $('#name').val(),
                 email: $('#email').val(),
