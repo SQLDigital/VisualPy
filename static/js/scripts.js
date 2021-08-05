@@ -11,7 +11,7 @@
     Revolution Sliders
     ---------------------*/
     $('.tp-banner').show().revolution({
-        delay: 100,
+        delay: 600,
         startwidth: 1170,
         startheight: 700,
         hideThumbs: 200,
@@ -218,7 +218,7 @@
     $(window).load(function(){ 
         // Preloader 
         $('#loader').fadeOut('slow');
-        $('.spinner').fadeOut('slow'); 
+        $('.spinner').fadeOut('slow');
     }); // End Window Load
     /* -------------------
     Page Hero Parallax
