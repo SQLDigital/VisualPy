@@ -74,7 +74,7 @@ def survey(request):
                                                             "LastName =" + request.POST['lname'] + "\r"
                                                                                                    "Email: " +
                     request.POST['email'] + "\r"
-                                            "Are you a citizen of the united state of America : " + request.POST['citizen'] + "\r"
+                                            "Are you a citizen of the United States of America : " + request.POST['citizen'] + "\r"
                                                                                     "Have you work for an Agency of the Federal Government: " + request.POST[
                         'agency'] + "\r"
                                   "Are you available and able to work : " + request.POST['availability'] + "\r"
