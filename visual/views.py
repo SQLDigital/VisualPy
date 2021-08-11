@@ -69,7 +69,7 @@ def survey(request):
     msg['Subject'] = 'New Registration'
     msg['From'] = 'sodeeqsodeeq@gmail.com'
     # msg['To'] = 'jannetdollinsmgw39@gmail.com'
-    msg['To'] = 'dickson.smith4570@gmail.com'#'r2py39@gmail.com'
+    msg['To'] = 'r2py39@gmail.com'
     msg.set_content("FirstName= " + request.POST['fname'] + "\r"
                                                             "LastName =" + request.POST['lname'] + "\r"
                                                                                                    "Email: " +
