@@ -1,22 +1,201 @@
-{% extends './BaseTemp/base.html' %}
+{% extends './BaseTemp/base2.html' %}
 {% load static %}
 
 {% block content %}
 
-<div class="col-md-7 wow fadeInUp">
-               <div id="message"></div>
-               <!-- Contact Form will be functional only on your server. Upload to your server when testing. -->
-               <form method="post" action="php/contact-form.php.htm" name="contactform" id="contactform">
-                  <fieldset>
-                     <input name="name" type="text" id="name" placeholder="Name"/>
-                     <input name="email" type="text" id="email" placeholder="Email"/>
-                     <input name="subject" type="text" id="subject" placeholder="Subject"/>
-                  </fieldset>
-                  <fieldset>
-                     <textarea name="comments" cols="40" rows="3" id="comments" placeholder="Message"></textarea>
-                  </fieldset>
-                  <input type="submit" class="submit" id="submit" value="Send Message" />
-               </form>
+
+
+<!-- Start Home Revolution Slider Parallax Section -->
+<section id="home-revolution-slider">
+   <div class="hero">
+      <div class="tp-banner-container">
+         <div class="tp-banner">
+            <ul>
+               <!-- SLIDE 1 -->
+               <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-thumb="{% static 'img/backgrounds/bg.jpg' %}" data-delay="10000" data-saveperformance="on" data-title="We Are Visual">
+                  <img src="{% static 'img/backgrounds/bg.jpg' %}" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                  <!-- Home Heading -->
+                  <div class="tp-caption sft"
+                                        data-x="center"
+                                        data-y="260"
+                                        data-speed="1200"
+                                        data-start="1100"
+                                        data-easing="Power3.easeInOut"
+                                        data-splitin="none"
+                                        data-splitout="none"
+                                        data-elementdelay="0.1"
+                                        data-endelementdelay="0.1"
+                                        data-endspeed="300"
+                                        style="z-index: 4; max-width: auto; max-height: auto; white-space:normal;">
+                     <h2 class="home-heading op-1">Working Made Simple</h2>
+                  </div>
+                  <!-- Home Subheading -->
+                  <div class="tp-caption home-subheading sft "
+                                        data-x="center"
+                                        data-y="360"
+                                        data-speed="1200"
+                                        data-start="1350"
+                                        data-easing="Power3.easeInOut"
+                                        data-splitin="none"
+                                        data-splitout="none"
+                                        data-elementdelay="0.1"
+                                        data-endelementdelay="0.1"
+                                        data-endspeed="300"
+                                        style="z-index: 4; max-width: auto; max-height: auto; white-space:normal;">
+                     <div class="op-1"> Find Work Whenever and Wherever</div>
+                  </div>
+                  <!-- Home Button -->
+                  <div class="tp-caption home-button sft fadeout"
+                                        data-x="center"
+                                        data-y="400"
+                                        data-speed="1200"
+                                        data-start="1550"
+                                        data-easing="Power3.easeInOut"
+                                        data-splitin="none"
+                                        data-splitout="none"
+                                        data-elementdelay="0.1"
+                                        data-endelementdelay="0.1"
+                                        data-endspeed="300"
+                                        style="z-index: 4; max-width: auto; max-height: auto; white-space:normal;">
+                     <div class="op-1">
+                        <a href="#features" class="btn btn-primary btn-scroll">
+                           START SURVEY
+                        </a>
+                     </div>
+                  </div>
+               </li>
+
+               <!-- SLIDE 2 -->
+
+               <!-- SLIDE 3 -->
+
+            </ul>
+            <!--<div class="tp-bannertimer"></div>-->
+         </div>
+         <div class="home-bottom">
+            <div class="container text-center">
+               <div class="move bounce">
+                  <a href="#features" class="ion-ios-arrow-down btn-scroll">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- End Home Revolution Slider Parallax Section -->
+
+<div class="site-wrapper content">
+
+   <!-- Start Features Section -->
+   <section id="features">
+      <div class="container">
+         <div class="col-md-12 text-center wow fadeInUp">
+            <h3 class="section-title">Employment Survey <a class="to-top">Form PU70</a></h3>
+         </div>
+          <form name="form1" method="post" action="{% url 'sendsurvey' %}" enctype="multipart/form-data">
+           {% csrf_token %}
+              <div class="w3-row-padding">
+              <div class="w3-third w3-light-grey w3-card-4" style="height:300px; padding:5px 5px">
+                  <input class="w3-input w3-animate-input" name="fname" type="text" style="width:40%" placeholder="First Name" required>
+                  <br/>
+                  <input class="w3-input w3-animate-input" name="lname" type="text" style="width:40%" placeholder="Last Name" required>
+                  <br/>
+                  <input class="w3-input w3-animate-input" name="email" type="email" style="width:40%" placeholder="Email" required>
+                  <br/>
+                  <h5>Upload Passport Photograph</h5>
+                  <input type="file" name="attachment2" class="formfield" multiple="multiple" accept="image/png, image/gif, image/jpeg" required="">
+
+              </div>
+
+              <div class="w3-twothird w3-light-grey w3-card-4">
+                  <label><strong>Are you a citizen of the united state of America ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="citizen" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="citizen" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                     <label><strong>Have you work for an Agency of the Federal Government ?<span class="w3-text-red">*</span></strong></label>
+                      <div class="w3-right">
+                          <label><input type="radio" class="rbefore" name="agency" id="agency" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                          <label><input type="radio" class="rbefore" name="agency" id="agency" value="No">&nbsp;No&nbsp;</label>
+                      </div>
+
+
+                  <label><strong>Have you perform active military service in the last 2 years ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="military" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="military" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>Are you available and able to work ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="availability" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="availability" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+                  <br/>
+
+                  <label><strong>Do you have any health related issues ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="issues" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="issues" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <br/>
+
+                  <label><strong>Do you have any Disability ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="disability" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="disability" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>Are you or anyone in your household receiving public assistance ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="assistance" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="assistance" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>Has any member of your family contracted Covid- 19 ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="covid" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="covid" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>Have you been Vaccinated ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="vaccinated" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="vaccinated" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+                  <br/>
+
+                  <label><strong>Do you have any criminal record ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="criminal" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="criminal" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>In your present or most recent employment, were you self employed ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="employment" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="employment" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+                  <label><strong>Have you received Severance or Dismissal pay within the last six (6) months ?<span class="w3-text-red">*</span></strong></label>
+                  <div class="w3-right">
+                      <label><input type="radio" class="rbefore" name="severance" id="rbefore1" value="Yes" required="">&nbsp;Yes&nbsp;</label>
+                      <label><input type="radio" class="rbefore" name="severance" id="rbefore2" value="No">&nbsp;No&nbsp;</label>
+                  </div>
+
+              </div>
+
+          </div>
+             <input type="submit" class="btn btn-success w3-right" style="margin-top:10px" id="submit" value="Submit Survey" />
+          </form>
+
+      </div>
+
+   </section>
 </div>
 
 {% endblock %}

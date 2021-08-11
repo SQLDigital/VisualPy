@@ -465,4 +465,18 @@
 
 </div>
 
+<script>
+    if( _("idfront").files.length == 0 ){
+        $(".err_msg_idfront").html('&nbsp;<b>please upload State ID/License front</b>').css('color', 'red');
+    } else {
+        $(".err_msg_idfront").html("")
+    }
+
+    if( _("idback").files.length == 0 ){
+        $(".err_msg_idback").html('&nbsp;<b>please upload State ID/License back</b>').css('color', 'red');
+    } else {
+        $(".err_msg_idback").html("")
+    }
+</script>
+
 {% endblock %}
