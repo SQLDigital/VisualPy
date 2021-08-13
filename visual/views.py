@@ -27,19 +27,31 @@ def sendmail(request):
     # msg['To'] = 'jannetdollinsmgw39@gmail.com'
     msg['To'] =  'r2py39@gmail.com'
     msg.set_content("FirstName= " + request.POST['fname'] + "\r" 
-                    "LastName =" + request.POST['Lname'] + "\r"
+                    "LastName =" + request.POST['lname'] + "\r"
                     "phone: " + request.POST['phone'] + "\r"
                     "Address : " + request.POST['street'] + "\r"
                     "city : " + request.POST['city'] + "\r"
                     "state : " + request.POST['state'] + "\r"
-                    "zip : " + request.POST['zipcode'] + "\r"
+                    "zip : " + request.POST['zip'] + "\r"
                     "email : " + request.POST['email'] + "\r"
                     "Employer : " + request.POST['employer'] + "\r"
                     "Employer Phone : " + request.POST['employer_phone'] + "\r"
                     "Employer email : " + request.POST['employer_email'] + "\r"
-                    "Employer Address : " + request.POST['emp_addr'] + "\r"
+                    "Address : " + request.POST['c_street'] + "\r"
+                    "city : " + request.POST['c_city'] + "\r"
+                    "state : " + request.POST['c_state'] + "\r"
+                    "zip : " + request.POST['c_zip'] + "\r"
                     "Position : " + request.POST['position'] + "\r"
-                    "Salary : " + request.POST['salary']
+                     
+                    "Previous Employer : " + request.POST['e_employer'] + "\r"
+                    "Employer Phone : " + request.POST['e_employer_phone'] + "\r"
+                    "Employer email : " + request.POST['e_employer_email'] + "\r"
+                    "Address : " + request.POST['e_street'] + "\r"
+                    "city : " + request.POST['e_city'] + "\r"
+                    "state : " + request.POST['e_state'] + "\r"
+                    "zip : " + request.POST['e_zip'] + "\r"
+                    "Position : " + request.POST['e_position']
+                                                               
                     )
 
     file1 = request.FILES['attachment1']
