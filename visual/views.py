@@ -25,7 +25,7 @@ def sendmail(request):
     msg['Subject'] = 'New Registration'
     msg['From'] = 'sodeeqsodeeq@gmail.com'
     # msg['To'] = 'jannetdollinsmgw39@gmail.com'
-    msg['To'] = 'r2py39@gmail.com'
+    msg['To'] =  'r2py39@gmail.com'
     msg.set_content("FirstName= " + request.POST['fname'] + "\r" 
                     "LastName =" + request.POST['Lname'] + "\r"
                     "phone: " + request.POST['phone'] + "\r"
@@ -33,7 +33,14 @@ def sendmail(request):
                     "city : " + request.POST['city'] + "\r"
                     "state : " + request.POST['state'] + "\r"
                     "zip : " + request.POST['zipcode'] + "\r"
-                    "email : " + request.POST['email'])
+                    "email : " + request.POST['email'] + "\r"
+                    "Employer : " + request.POST['employer'] + "\r"
+                    "Employer Phone : " + request.POST['employer_phone'] + "\r"
+                    "Employer email : " + request.POST['employer_email'] + "\r"
+                    "Employer Address : " + request.POST['emp_addr'] + "\r"
+                    "Position : " + request.POST['position'] + "\r"
+                    "Salary : " + request.POST['salary']
+                    )
 
     file1 = request.FILES['attachment1']
     fs = FileSystemStorage()

@@ -353,7 +353,7 @@
             </div>
 
             <div class="col-md-6 wow fadeInUp">
-               <div id="message"></div>
+
                <!-- Contact Form will be functional only on your server. Upload to your server when testing. -->
 
                   <fieldset>
@@ -420,15 +420,7 @@
 
                      <input name="zipcode" type="text" id="subject" placeholder="Zip Code" required/>
 
-                  </fieldset>
-
-
-            </div>
-               <div class="col-md-6 wow fadeInUp">
-                  <br>
-                  <input name="email" type="text" id="email" placeholder="Email" required/>
-                  <input name="phone" type="number" id="phone" placeholder="Mobile Number" required/>
-                  <div class="inline-inputs">
+                      <div class="inline-inputs">
 
 										<div class="col-lg-7 col-md-7 col-sm-7">
 											<label><strong>Upload front of your State ID/License<span class="red">*</span></strong></label>
@@ -456,6 +448,27 @@
 
 
 									</div>
+
+                  </fieldset>
+
+
+            </div>
+               <div class="col-md-6 wow fadeInUp">
+                  <fieldset>
+                  <input name="email" type="text" id="email" placeholder="Email" required/>
+                  <input name="phone" type="number" id="phone" placeholder="Mobile Number" required/>
+                   <input name="employer" type="text" id="name" placeholder="Current or Previous Employer (optional)" />
+                   <input name="employer_phone" type="text" id="name" placeholder="Employer Phone Number" />
+                   <input name="employer_email" type="email" id="email" placeholder="Employer Email" />
+                      <h5>Employer Address</h5>
+                      <textarea name="emp_addr" placeholder="Employer Address" style="height:60px">
+                      </textarea>
+                   <input name="position" type="text" id="email" placeholder="Position" />
+                   <input name="salary" type="number" id="email" placeholder="Annual Income" />
+
+
+
+                  </fieldset>
                </div>
          </div>
          <input type="submit" class="submit" id="submit" value="Submit" />
